@@ -127,28 +127,28 @@
     <main class="flex-grow pt-28 pb-20">
 
         <!-- PAGE 1: HOME -->
-        <section id="page-home" class="page-view active relative min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden px-6 pt-16 pb-16">
-            <div class="absolute inset-0 z-0 flex items-center justify-center overflow-hidden bg-fashion-dark">
-                <img src="hero-bg.jpg" alt="[Главный фон: hero-bg.jpg]" class="w-full h-full object-cover object-center opacity-45 scale-100 transform sm:scale-105" onerror="this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=1920'">
-                <div class="absolute inset-0 bg-gradient-to-t from-fashion-dark via-fashion-dark/50 to-fashion-dark/20"></div>
+        <section id="page-home" class="page-view active relative min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden px-6 pt-16 pb-16 bg-[#f9f8f6] text-[#0d0d0d]">
+            <div class="absolute inset-0 z-0 flex items-center justify-center overflow-hidden bg-[#f9f8f6]">
+                <img src="hero-bg.jpg" alt="[Главный фон: hero-bg.jpg]" class="w-full h-full object-cover object-center opacity-60 mix-blend-luminosity scale-100 transform sm:scale-105" onerror="this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=1920'">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#f9f8f6] via-[#f9f8f6]/70 to-[#f9f8f6]/30"></div>
             </div>
 
             <div class="relative z-10 text-center max-w-4xl mx-auto my-auto">
-                <span class="text-fashion-accent text-xs tracking-[0.3em] uppercase block mb-4">Makeup & Hair Couture</span>
-                <h1 class="text-4xl sm:text-6xl md:text-7xl font-serif font-light tracking-wide mb-6 leading-tight">
+                <span class="text-fashion-accent text-xs tracking-[0.3em] uppercase block mb-4 font-semibold">Makeup & Hair Couture</span>
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-serif font-light tracking-wide mb-6 leading-tight text-[#0d0d0d]">
                     Эстетика стиля <br><span class="italic font-normal">в каждой детали</span>
                 </h1>
-                <p class="text-fashion-muted text-sm sm:text-base max-w-lg mx-auto mb-10 tracking-wider font-light">
+                <p class="text-gray-600 text-sm sm:text-base max-w-lg mx-auto mb-10 tracking-wider font-light">
                     Свадебные образы, коммерческие съемки и эксклюзивные клиентские пакеты.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                    <button onclick="switchPage('wedding')" class="w-full sm:w-auto bg-fashion-light text-fashion-dark px-8 py-4 text-xs tracking-widest uppercase font-medium hover:bg-fashion-accent hover:text-white transition duration-300">
+                    <button onclick="switchPage('wedding')" class="w-full sm:w-auto bg-[#0d0d0d] text-fashion-light px-8 py-4 text-xs tracking-widest uppercase font-medium hover:bg-fashion-accent hover:text-white transition duration-300 shadow-sm">
                         Свадебный пакет
                     </button>
-                    <button onclick="switchPage('shooting')" class="w-full sm:w-auto border border-white/30 px-8 py-4 text-xs tracking-widest uppercase font-medium hover:border-fashion-accent hover:text-fashion-accent transition duration-300">
+                    <button onclick="switchPage('shooting')" class="w-full sm:w-auto border border-[#0d0d0d]/30 text-[#0d0d0d] px-8 py-4 text-xs tracking-widest uppercase font-medium hover:border-fashion-accent hover:text-fashion-accent transition duration-300">
                         Пакет для съемок
                     </button>
-                    <button onclick="switchPage('clients')" class="w-full sm:w-auto border border-white/30 px-8 py-4 text-xs tracking-widest uppercase font-medium hover:border-fashion-accent hover:text-fashion-accent transition duration-300">
+                    <button onclick="switchPage('clients')" class="w-full sm:w-auto border border-[#0d0d0d]/30 text-[#0d0d0d] px-8 py-4 text-xs tracking-widest uppercase font-medium hover:border-fashion-accent hover:text-fashion-accent transition duration-300">
                         Клиентский пакет
                     </button>
                 </div>
