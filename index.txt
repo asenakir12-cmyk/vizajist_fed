@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOPHIA VANCE | Makeup & Hair Stylist</title>
+    <title>ANASTASIA CHERNOLETSKAYA | Makeup & Hair Stylist</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -47,8 +47,8 @@
     <!-- Header / Navigation -->
     <header class="fixed top-0 left-0 w-full z-50 bg-fashion-dark/90 backdrop-blur-md border-b border-white/10">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="font-serif text-2xl tracking-widest uppercase font-semibold">
-                Sophia Vance
+            <a href="#" class="font-serif text-xl sm:text-2xl tracking-widest uppercase font-semibold">
+                Anastasia Chernoletskaya
             </a>
             
             <div class="flex items-center space-x-4">
@@ -146,7 +146,7 @@
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div class="relative">
                 <div class="aspect-[3/4] overflow-hidden rounded-sm">
-                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=1000" alt="София Ванс" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=1000" alt="Анастасия Чернолецкая" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
                 </div>
                 <div class="absolute -bottom-6 -right-6 w-48 h-48 border border-fashion-accent hidden sm:block -z-10"></div>
             </div>
@@ -159,7 +159,7 @@
                     </h2>
                 </div>
                 <p class="text-fashion-muted text-sm leading-relaxed font-light">
-                    Меня зовут София, я профессиональный визажист и стилист по волосам с опытом работы более 7 лет. Сотрудничаю с топовыми фотографами, модельными агентствами, журналами и брендами одежды. 
+                    Меня зовут Анастасия, я профессиональный визажист и стилист по волосам с опытом работы более 7 лет. Сотрудничаю с топовыми фотографами, модельными агентствами, журналами и брендами одежды. 
                 </p>
                 <p class="text-fashion-muted text-sm leading-relaxed font-light">
                     Мой почерк — это чистая кожа, благородные текстуры, подчеркивающие природную красоту, и современные трендовые укладки: от ультрагладких текстур до расслабленной голливудской волны и fashion-мокрых эффектов.
@@ -195,14 +195,14 @@
             <div class="group relative bg-fashion-gray/50 border border-white/10 p-8 sm:p-12 overflow-hidden hover:border-fashion-accent transition duration-500">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-fashion-accent/5 rounded-full blur-2xl group-hover:bg-fashion-accent/15 transition"></div>
                 <span class="text-fashion-accent text-xs tracking-widest uppercase block mb-3">Backstage & Studio</span>
-                <h3 class="text-2xl font-serif mb-4">Съемки & Коммерция</h3>
+                <h3 class="text-2xl font-serif mb-4">Съемки & Клиентские фотосессии</h3>
                 <p class="text-fashion-muted text-sm mb-8 leading-relaxed font-light">
-                    Работа на съемочных площадках для брендов одежды, лукбуков, каталогов, журналов и рекламных кампаний. Полное сопровождение смены, оперативная смена образов.
+                    Работа на съемочных площадках для брендов одежды, лукбуков, каталогов и рекламных кампаний, а также создание безупречных образов для индивидуальных и семейных фотосессий.
                 </p>
                 <ul class="space-y-3 text-xs tracking-wider uppercase text-fashion-light/80 mb-8 border-t border-white/10 pt-6">
                     <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-fashion-accent mr-2"></i> Сопровождение съемочного дня</li>
-                    <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-fashion-accent mr-2"></i> Творческие коллаборации</li>
-                    <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-fashion-accent mr-2"></i> Создание креативных образов</li>
+                    <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-fashion-accent mr-2"></i> Индивидуальные клиентские фотосессии</li>
+                    <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-fashion-accent mr-2"></i> Создание креативных и трендовых образов</li>
                 </ul>
                 <a href="#booking" class="inline-flex items-center text-xs tracking-widest uppercase text-fashion-accent hover:underline">
                     Заказать смену <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
@@ -330,7 +330,7 @@
                     <label class="block text-xs tracking-widest uppercase text-fashion-muted mb-2">Тип услуги</label>
                     <select class="w-full bg-fashion-dark border border-white/20 px-4 py-3 text-sm focus:outline-none focus:border-fashion-accent transition">
                         <option>Свадебный образ (Невеста)</option>
-                        <option>Коммерческая съемка / Бренд</option>
+                        <option>Съемки / Клиентская фотосессия</option>
                         <option>Индивидуальный образ</option>
                         <option>Обучение / Мастер-класс</option>
                     </select>
@@ -356,8 +356,8 @@
     <footer id="contacts" class="border-t border-white/10 py-16 px-6 bg-fashion-dark">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center md:text-left">
             <div>
-                <a href="#" class="font-serif text-2xl tracking-widest uppercase font-semibold block mb-2">
-                    Sophia Vance
+                <a href="#" class="font-serif text-xl sm:text-2xl tracking-widest uppercase font-semibold block mb-2">
+                    Anastasia Chernoletskaya
                 </a>
                 <p class="text-xs text-fashion-muted tracking-widest uppercase">Makeup & Hair Couture / Worldwide</p>
             </div>
@@ -365,11 +365,11 @@
             <div class="flex justify-center space-x-8 text-xs tracking-widest uppercase">
                 <a href="https://instagram.com" target="_blank" class="hover:text-fashion-accent transition">Instagram</a>
                 <a href="https://t.me" target="_blank" class="hover:text-fashion-accent transition">Telegram</a>
-                <a href="mailto:contact@sophiavance.com" class="hover:text-fashion-accent transition">Email</a>
+                <a href="mailto:contact@chernoletskaya.com" class="hover:text-fashion-accent transition">Email</a>
             </div>
 
             <div class="text-xs text-fashion-muted tracking-wider text-center md:text-right">
-                &copy; 2026 Sophia Vance. All Rights Reserved.
+                &copy; 2026 Anastasia Chernoletskaya. All Rights Reserved.
             </div>
         </div>
     </footer>
