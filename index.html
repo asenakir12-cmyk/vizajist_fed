@@ -14,9 +14,9 @@
                         fashion: {
                             dark: '#0d0d0d',
                             light: '#f9f8f6',
-                            accent: '#c5a880',
-                            gray: '#1a1a1a',
-                            muted: '#8c8c8c'
+                            accent: '#b89768',
+                            gray: '#f0ede6',
+                            muted: '#666666'
                         }
                     },
                     fontFamily: {
@@ -34,8 +34,8 @@
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #0d0d0d;
-            color: #f9f8f6;
+            background-color: #f9f8f6;
+            color: #1a1a1a;
         }
         h1, h2, h3, .font-serif {
             font-family: 'Playfair Display', serif;
@@ -48,21 +48,21 @@
         }
     </style>
 </head>
-<body class="bg-fashion-dark text-fashion-light antialiased selection:bg-fashion-accent selection:text-white min-h-screen flex flex-col justify-between">
+<body class="bg-[#f9f8f6] text-[#1a1a1a] antialiased selection:bg-fashion-accent selection:text-white min-h-screen flex flex-col justify-between">
 
     <!-- Header / Navigation -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-[#f9f8f6]/95 text-fashion-dark backdrop-blur-md border-b border-fashion-dark/10">
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#f9f8f6]/95 text-[#1a1a1a] backdrop-blur-md border-b border-[#1a1a1a]/5">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#" onclick="switchPage('home')" class="font-serif text-xl sm:text-2xl tracking-widest uppercase font-semibold hover:text-fashion-accent transition">
                 Anastasia Chernoletskaya
             </a>
             
             <div class="flex items-center space-x-4">
-                <button onclick="switchPage('booking')" class="hidden sm:inline-block border border-fashion-dark/30 px-5 py-2.5 text-xs tracking-widest uppercase hover:bg-fashion-dark hover:text-[#f9f8f6] transition duration-300">
+                <button onclick="switchPage('booking')" class="hidden sm:inline-block border border-[#1a1a1a]/30 px-5 py-2.5 text-xs tracking-widest uppercase hover:bg-[#1a1a1a] hover:text-[#f9f8f6] transition duration-300">
                     Забронировать
                 </button>
-                <div id="menu-container" class="relative group py-2">
-                    <button id="menu-btn" class="text-fashion-dark focus:outline-none p-2 hover:text-fashion-accent transition flex items-center space-x-2">
+                <div id="menu-container" class="relative py-2">
+                    <button id="menu-btn" class="text-[#1a1a1a] focus:outline-none p-2 hover:text-fashion-accent transition flex items-center space-x-2 cursor-pointer">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
                 </div>
@@ -71,13 +71,13 @@
     </header>
 
     <!-- Side Drawer Menu -->
-    <div id="drawer-overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    <div id="drawer-overlay" class="fixed inset-0 bg-black/20 backdrop-blur-xs z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
     
-    <div id="side-drawer" class="fixed top-0 right-0 w-full sm:w-96 h-full bg-[#f9f8f6] text-fashion-dark border-l border-fashion-dark/10 z-50 transform translate-x-full transition-transform duration-300 flex flex-col justify-between p-8 sm:p-12 shadow-2xl">
+    <div id="side-drawer" class="fixed top-0 right-0 w-full sm:w-96 h-full bg-[#f9f8f6] text-[#1a1a1a] z-50 transform translate-x-full transition-transform duration-300 flex flex-col justify-between p-8 sm:p-12 shadow-2xl">
         <div>
-            <div class="flex items-center justify-between pb-8 border-b border-fashion-dark/15">
+            <div class="flex items-center justify-between pb-8">
                 <span class="font-serif text-lg tracking-widest uppercase">Меню</span>
-                <button id="close-drawer" class="text-fashion-dark/70 hover:text-fashion-dark p-2 focus:outline-none transition">
+                <button id="close-drawer" class="text-[#1a1a1a]/70 hover:text-[#1a1a1a] p-2 focus:outline-none transition cursor-pointer">
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
             </div>
@@ -114,9 +114,9 @@
             </nav>
         </div>
 
-        <div class="pt-8 border-t border-fashion-dark/15 text-xs tracking-wider space-y-3">
-            <p class="text-fashion-dark/60 uppercase">Связь со мной:</p>
-            <div class="flex space-x-6 text-fashion-dark uppercase">
+        <div class="pt-8 text-xs tracking-wider space-y-3">
+            <p class="text-[#1a1a1a]/60 uppercase">Связь со мной:</p>
+            <div class="flex space-x-6 text-[#1a1a1a] uppercase">
                 <a href="https://instagram.com" target="_blank" class="hover:text-fashion-accent transition">Instagram</a>
                 <a href="https://t.me" target="_blank" class="hover:text-fashion-accent transition">Telegram</a>
             </div>
@@ -124,33 +124,33 @@
     </div>
 
     <!-- MAIN CONTENT CONTAINER -->
-    <main class="flex-grow pt-28 pb-20">
+    <main class="flex-grow pt-28 pb-16">
 
         <!-- PAGE 1: HOME -->
-        <section id="page-home" class="page-view active relative min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden px-6 pt-16 pb-16 bg-[#0d0d0d] text-[#f9f8f6]">
-            <div class="absolute inset-0 z-0 flex items-center justify-center overflow-hidden bg-[#0d0d0d]">
-                <img src="hero-bg.jpg" alt="[Главный фон: hero-bg.jpg]" class="w-full h-full object-cover object-center scale-100 transform sm:scale-105" onerror="this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=1920'">
-                <!-- Very subtle, faint white veil overlay so color photo shows clearly with just a light airy dust -->
-                <div class="absolute inset-0 bg-white/[0.04] backdrop-blur-[0.2px]"></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-[#0d0d0d]/30 via-transparent to-[#0d0d0d]/10"></div>
+        <section id="page-home" class="page-view active relative min-h-[calc(100vh-7rem)] flex items-center justify-center overflow-hidden px-6 bg-[#f9f8f6] text-[#1a1a1a] py-12">
+            <div class="absolute inset-0 z-0 flex items-center justify-center overflow-hidden bg-[#f9f8f6]">
+                <img src="hero-bg.jpg" alt="[Главный фон: hero-bg.jpg]" class="w-full h-full object-cover object-top scale-100 transform sm:scale-105" style="aspect-ratio: 2066/3672;" onerror="this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=1920'">
+                <!-- Легкая белая вуаль поверх цветного фото -->
+                <div class="absolute inset-0 bg-white/45 backdrop-blur-[0.2px]"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#f9f8f6]/30 via-transparent to-[#f9f8f6]/20"></div>
             </div>
 
             <div class="relative z-10 text-center max-w-4xl mx-auto my-auto">
-                <span class="text-fashion-accent text-xs tracking-[0.3em] uppercase block mb-4 font-semibold">Makeup & Hair Couture</span>
-                <h1 class="text-4xl sm:text-6xl md:text-7xl font-serif font-light tracking-wide mb-6 leading-tight text-[#f9f8f6]">
+                <span class="text-fashion-accent text-xs tracking-[0.3em] uppercase block mb-3 font-semibold">Makeup & Hair Couture</span>
+                <h1 class="text-3xl sm:text-5xl md:text-6xl font-serif font-light tracking-wide mb-4 leading-tight text-[#1a1a1a]">
                     Эстетика стиля <br><span class="italic font-normal">в каждой детали</span>
                 </h1>
-                <p class="text-fashion-muted text-sm sm:text-base max-w-lg mx-auto mb-10 tracking-wider font-light">
+                <p class="text-fashion-muted text-xs sm:text-sm max-w-lg mx-auto mb-8 tracking-wider font-light">
                     Свадебные образы, коммерческие съемки и эксклюзивные клиентские пакеты.
                 </p>
-                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                    <button onclick="switchPage('wedding')" class="w-full sm:w-auto bg-fashion-light text-fashion-dark px-8 py-4 text-xs tracking-widest uppercase font-medium hover:bg-fashion-accent hover:text-white transition duration-300 shadow-sm">
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4">
+                    <button onclick="switchPage('wedding')" class="w-full sm:w-auto bg-[#1a1a1a] text-[#f9f8f6] px-7 py-3.5 text-xs tracking-widest uppercase font-medium hover:bg-fashion-accent hover:text-white transition duration-300 shadow-sm cursor-pointer">
                         Свадебный пакет
                     </button>
-                    <button onclick="switchPage('shooting')" class="w-full sm:w-auto border border-white/30 text-fashion-light px-8 py-4 text-xs tracking-widest uppercase font-medium hover:border-fashion-accent hover:text-fashion-accent transition duration-300">
+                    <button onclick="switchPage('shooting')" class="w-full sm:w-auto border border-[#1a1a1a]/30 text-[#1a1a1a] px-7 py-3.5 text-xs tracking-widest uppercase font-medium hover:border-fashion-accent hover:text-fashion-accent transition duration-300 cursor-pointer">
                         Пакет для съемок
                     </button>
-                    <button onclick="switchPage('clients')" class="w-full sm:w-auto border border-white/30 text-fashion-light px-8 py-4 text-xs tracking-widest uppercase font-medium hover:border-fashion-accent hover:text-fashion-accent transition duration-300">
+                    <button onclick="switchPage('clients')" class="w-full sm:w-auto border border-[#1a1a1a]/30 text-[#1a1a1a] px-7 py-3.5 text-xs tracking-widest uppercase font-medium hover:border-fashion-accent hover:text-fashion-accent transition duration-300 cursor-pointer">
                         Клиентский пакет
                     </button>
                 </div>
@@ -158,10 +158,10 @@
         </section>
 
         <!-- PAGE 2: ABOUT -->
-        <section id="page-about" class="page-view px-6 max-w-7xl mx-auto pt-6">
+        <section id="page-about" class="page-view px-6 max-w-7xl mx-auto py-8 bg-[#f9f8f6] text-[#1a1a1a]">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div class="relative">
-                    <div class="aspect-[3/4] overflow-hidden rounded-sm">
+                    <div class="aspect-[3/4] overflow-hidden rounded-sm bg-fashion-gray">
                         <img src="about.jpg" alt="[Портрет визажиста: about.jpg]" class="w-full h-full object-cover hover:scale-105 transition duration-700" onerror="this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=1000'">
                     </div>
                     <div class="absolute -bottom-6 -right-6 w-48 h-48 border border-fashion-accent hidden sm:block -z-10"></div>
@@ -181,7 +181,7 @@
                         Мой почерк — это чистая кожа, благородные текстуры, подчеркивающие природную красоту, и современные трендовые укладки: от ультрагладких текстур до расслабленной голливудской волны и fashion-мокрых эффектов.
                     </p>
 
-                    <div class="grid grid-cols-3 gap-6 pt-6 border-t border-white/10">
+                    <div class="grid grid-cols-3 gap-6 pt-6 border-t border-[#1a1a1a]/10">
                         <div>
                             <span class="block text-2xl sm:text-3xl font-serif text-fashion-accent font-semibold">7+</span>
                             <span class="text-[11px] tracking-widest uppercase text-fashion-muted">Лет опыта</span>
@@ -200,7 +200,7 @@
         </section>
 
         <!-- PAGE 3: WEDDING (Свадьба) -->
-        <section id="page-wedding" class="page-view px-6 max-w-7xl mx-auto pt-6">
+        <section id="page-wedding" class="page-view px-6 max-w-7xl mx-auto py-8 bg-[#f9f8f6] text-[#1a1a1a]">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span class="text-fashion-accent text-xs tracking-[0.2em] uppercase block mb-3">Bridal Couture</span>
                 <h2 class="text-3xl sm:text-4xl font-serif font-light mb-4">Свадебные пакеты</h2>
@@ -209,37 +209,37 @@
 
             <!-- Pricing Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-                <div class="bg-fashion-gray/50 border border-white/10 p-8 flex flex-col justify-between hover:border-fashion-accent transition duration-300">
+                <div class="bg-white border border-[#1a1a1a]/10 p-8 flex flex-col justify-between hover:border-fashion-accent transition duration-300 shadow-sm">
                     <div>
                         <span class="text-fashion-accent text-[10px] tracking-widest uppercase block mb-2">Пакет 1</span>
                         <h3 class="text-xl font-serif mb-3">Свадебный образ</h3>
                         <p class="text-fashion-muted text-xs leading-relaxed mb-6 font-light">Макияж + свадебная прическа в день торжества, выезд (по договоренности).</p>
                     </div>
-                    <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                    <div class="flex items-center justify-between border-t border-[#1a1a1a]/10 pt-4">
                         <span class="text-lg font-serif text-fashion-accent">6 500 ₽</span>
                         <button onclick="switchPage('booking')" class="text-xs tracking-widest uppercase hover:text-fashion-accent transition">Забронировать</button>
                     </div>
                 </div>
 
-                <div class="bg-fashion-gray/50 border border-white/10 p-8 flex flex-col justify-between hover:border-fashion-accent transition duration-300">
+                <div class="bg-white border border-[#1a1a1a]/10 p-8 flex flex-col justify-between hover:border-fashion-accent transition duration-300 shadow-sm">
                     <div>
                         <span class="text-fashion-accent text-[10px] tracking-widest uppercase block mb-2">Пакет 2</span>
                         <h3 class="text-xl font-serif mb-3">Репетиция + Образ</h3>
                         <p class="text-fashion-muted text-xs leading-relaxed mb-6 font-light">Предварительная репетиция свадебного образа и полный комплекс в день свадьбы.</p>
                     </div>
-                    <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                    <div class="flex items-center justify-between border-t border-[#1a1a1a]/10 pt-4">
                         <span class="text-lg font-serif text-fashion-accent">9 500 ₽</span>
                         <button onclick="switchPage('booking')" class="text-xs tracking-widest uppercase hover:text-fashion-accent transition">Забронировать</button>
                     </div>
                 </div>
 
-                <div class="bg-fashion-gray/50 border border-white/10 p-8 flex flex-col justify-between hover:border-fashion-accent transition duration-300">
+                <div class="bg-white border border-[#1a1a1a]/10 p-8 flex flex-col justify-between hover:border-fashion-accent transition duration-300 shadow-sm">
                     <div>
                         <span class="text-fashion-accent text-[10px] tracking-widest uppercase block mb-2">Пакет 3</span>
                         <h3 class="text-xl font-serif mb-3">VIP Невеста + Мама/Гость</h3>
                         <p class="text-fashion-muted text-xs leading-relaxed mb-6 font-light">Репетиция, полный образ для невесты и образ для мамы или подруги невесты.</p>
                     </div>
-                    <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                    <div class="flex items-center justify-between border-t border-[#1a1a1a]/10 pt-4">
                         <span class="text-lg font-serif text-fashion-accent">12 000 ₽</span>
                         <button onclick="switchPage('booking')" class="text-xs tracking-widest uppercase hover:text-fashion-accent transition">Забронировать</button>
                     </div>
@@ -247,7 +247,7 @@
             </div>
 
             <!-- Works Grid -->
-            <div class="border-t border-white/10 pt-16">
+            <div class="border-t border-[#1a1a1a]/10 pt-16">
                 <h3 class="text-2xl font-serif mb-8 text-center">Примеры свадебных работ</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="group relative overflow-hidden aspect-[4/5] bg-fashion-gray">
@@ -264,7 +264,7 @@
         </section>
 
         <!-- PAGE 4: SHOOTING (Съемки) -->
-        <section id="page-shooting" class="page-view px-6 max-w-7xl mx-auto pt-6">
+        <section id="page-shooting" class="page-view px-6 max-w-7xl mx-auto py-8 bg-[#f9f8f6] text-[#1a1a1a]">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span class="text-fashion-accent text-xs tracking-[0.2em] uppercase block mb-3">Backstage & Studio</span>
                 <h2 class="text-3xl sm:text-4xl font-serif font-light mb-4">Пакеты для съемок</h2>
@@ -273,37 +273,37 @@
 
             <!-- Pricing Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-                <div class="bg-fashion-gray/50 border border-white/10 p-8 flex flex-col justify-between hover:border-fashion-accent transition duration-300">
+                <div class="bg-white border border-[#1a1a1a]/10 p-8 flex flex-col justify-between hover:border-fashion-accent transition duration-300 shadow-sm">
                     <div>
                         <span class="text-fashion-accent text-[10px] tracking-widest uppercase block mb-2">Пакет 1</span>
                         <h3 class="text-xl font-serif mb-3">Fashion Образ</h3>
                         <p class="text-fashion-muted text-xs leading-relaxed mb-6 font-light">Креативный макияж и трендовая укладка (в т.ч. мокрый эффект, гладкие текстуры).</p>
                     </div>
-                    <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                    <div class="flex items-center justify-between border-t border-[#1a1a1a]/10 pt-4">
                         <span class="text-lg font-serif text-fashion-accent">4 500 ₽</span>
                         <button onclick="switchPage('booking')" class="text-xs tracking-widest uppercase hover:text-fashion-accent transition">Забронировать</button>
                     </div>
                 </div>
 
-                <div class="bg-fashion-gray/50 border border-white/10 p-8 flex flex-col justify-between hover:border-fashion-accent transition duration-300">
+                <div class="bg-white border border-[#1a1a1a]/10 p-8 flex flex-col justify-between hover:border-fashion-accent transition duration-300 shadow-sm">
                     <div>
                         <span class="text-fashion-accent text-[10px] tracking-widest uppercase block mb-2">Пакет 2</span>
                         <h3 class="text-xl font-serif mb-3">Съемочный день (до 4 ч.)</h3>
                         <p class="text-fashion-muted text-xs leading-relaxed mb-6 font-light">Работа на площадке, создание первого образа и оперативное сопровождение смены.</p>
                     </div>
-                    <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                    <div class="flex items-center justify-between border-t border-[#1a1a1a]/10 pt-4">
                         <span class="text-lg font-serif text-fashion-accent">9 000 ₽</span>
                         <button onclick="switchPage('booking')" class="text-xs tracking-widest uppercase hover:text-fashion-accent transition">Забронировать</button>
                     </div>
                 </div>
 
-                <div class="bg-fashion-gray/50 border border-white/10 p-8 flex flex-col justify-between hover:border-fashion-accent transition duration-300">
+                <div class="bg-white border border-[#1a1a1a]/10 p-8 flex flex-col justify-between hover:border-fashion-accent transition duration-300 shadow-sm">
                     <div>
                         <span class="text-fashion-accent text-[10px] tracking-widest uppercase block mb-2">Пакет 3</span>
                         <h3 class="text-xl font-serif mb-3">Full Day (Смена 8 ч.)</h3>
                         <p class="text-fashion-muted text-xs leading-relaxed mb-6 font-light">Полное сопровождение съемки брендовых каталогов, смена образов на площадке.</p>
                     </div>
-                    <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                    <div class="flex items-center justify-between border-t border-[#1a1a1a]/10 pt-4">
                         <span class="text-lg font-serif text-fashion-accent">15 000 ₽</span>
                         <button onclick="switchPage('booking')" class="text-xs tracking-widest uppercase hover:text-fashion-accent transition">Забронировать</button>
                     </div>
@@ -311,7 +311,7 @@
             </div>
 
             <!-- Works Grid -->
-            <div class="border-t border-white/10 pt-16">
+            <div class="border-t border-[#1a1a1a]/10 pt-16">
                 <h3 class="text-2xl font-serif mb-8 text-center">Примеры съемочных работ</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="group relative overflow-hidden aspect-[4/5] bg-fashion-gray">
@@ -328,7 +328,7 @@
         </section>
 
         <!-- PAGE 5: CLIENTS (Клиентский пакет) -->
-        <section id="page-clients" class="page-view px-6 max-w-7xl mx-auto pt-6">
+        <section id="page-clients" class="page-view px-6 max-w-7xl mx-auto py-8 bg-[#f9f8f6] text-[#1a1a1a]">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span class="text-fashion-accent text-xs tracking-[0.2em] uppercase block mb-3">Individual Care</span>
                 <h2 class="text-3xl sm:text-4xl font-serif font-light mb-4">Клиентские пакеты & Услуги</h2>
@@ -337,37 +337,37 @@
 
             <!-- Pricing Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-                <div class="bg-fashion-gray/50 border border-white/10 p-8 flex flex-col justify-between hover:border-fashion-accent transition duration-300">
+                <div class="bg-white border border-[#1a1a1a]/10 p-8 flex flex-col justify-between hover:border-fashion-accent transition duration-300 shadow-sm">
                     <div>
                         <span class="text-fashion-accent text-[10px] tracking-widest uppercase block mb-2">Комплекс</span>
                         <h3 class="text-xl font-serif mb-3">Полный образ</h3>
                         <p class="text-fashion-muted text-xs leading-relaxed mb-6 font-light">Макияж + любая прическа или укладка (включая голливудскую волну).</p>
                     </div>
-                    <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                    <div class="flex items-center justify-between border-t border-[#1a1a1a]/10 pt-4">
                         <span class="text-lg font-serif text-fashion-accent">5 000 ₽</span>
                         <button onclick="switchPage('booking')" class="text-xs tracking-widest uppercase hover:text-fashion-accent transition">Записаться</button>
                     </div>
                 </div>
 
-                <div class="bg-fashion-gray/50 border border-white/10 p-8 flex flex-col justify-between hover:border-fashion-accent transition duration-300">
+                <div class="bg-white border border-[#1a1a1a]/10 p-8 flex flex-col justify-between hover:border-fashion-accent transition duration-300 shadow-sm">
                     <div>
                         <span class="text-fashion-accent text-[10px] tracking-widest uppercase block mb-2">Отдельно</span>
                         <h3 class="text-xl font-serif mb-3">Макияж</h3>
                         <p class="text-fashion-muted text-xs leading-relaxed mb-6 font-light">Дневной, вечерний или праздничный макияж с учетом ваших пожеланий.</p>
                     </div>
-                    <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                    <div class="flex items-center justify-between border-t border-[#1a1a1a]/10 pt-4">
                         <span class="text-lg font-serif text-fashion-accent">3 000 ₽</span>
                         <button onclick="switchPage('booking')" class="text-xs tracking-widest uppercase hover:text-fashion-accent transition">Записаться</button>
                     </div>
                 </div>
 
-                <div class="bg-fashion-gray/50 border border-white/10 p-8 flex flex-col justify-between hover:border-fashion-accent transition duration-300">
+                <div class="bg-white border border-[#1a1a1a]/10 p-8 flex flex-col justify-between hover:border-fashion-accent transition duration-300 shadow-sm">
                     <div>
                         <span class="text-fashion-accent text-[10px] tracking-widest uppercase block mb-2">Укладка / Ретро</span>
                         <h3 class="text-xl font-serif mb-3">Прически & Укладки</h3>
                         <p class="text-fashion-muted text-xs leading-relaxed mb-6 font-light">Укладка, ретро-прическа, голливудская волна или собранный пучок.</p>
                     </div>
-                    <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                    <div class="flex items-center justify-between border-t border-[#1a1a1a]/10 pt-4">
                         <span class="text-lg font-serif text-fashion-accent">2 500 - 3 500 ₽</span>
                         <button onclick="switchPage('booking')" class="text-xs tracking-widest uppercase hover:text-fashion-accent transition">Записаться</button>
                     </div>
@@ -375,7 +375,7 @@
             </div>
 
             <!-- Works Grid -->
-            <div class="border-t border-white/10 pt-16">
+            <div class="border-t border-[#1a1a1a]/10 pt-16">
                 <h3 class="text-2xl font-serif mb-8 text-center">Примеры клиентских работ</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="group relative overflow-hidden aspect-[4/5] bg-fashion-gray">
@@ -392,15 +392,15 @@
         </section>
 
         <!-- PAGE 6: BOOKING -->
-        <section id="page-booking" class="page-view px-6 max-w-4xl mx-auto pt-6">
+        <section id="page-booking" class="page-view px-6 max-w-4xl mx-auto py-8 bg-[#f9f8f6] text-[#1a1a1a]">
             <div class="text-center mb-16">
                 <span class="text-fashion-accent text-xs tracking-[0.2em] uppercase block mb-3">Запись & Сотрудничество</span>
                 <h2 class="text-3xl sm:text-4xl font-serif font-light mb-4">Обсудим ваш проект или образ</h2>
                 <p class="text-fashion-muted text-sm font-light">Заполните форму, и я свяжусь с вами в течение часа для уточнения деталей.</p>
             </div>
 
-            <form id="contact-form" class="space-y-6 bg-fashion-gray/20 p-8 sm:p-12 border border-white/10 relative">
-                <div id="form-success" class="hidden absolute inset-0 bg-fashion-dark/95 flex flex-col items-center justify-center text-center p-8 z-20">
+            <form id="contact-form" class="space-y-6 bg-white p-8 sm:p-12 border border-[#1a1a1a]/10 relative shadow-sm">
+                <div id="form-success" class="hidden absolute inset-0 bg-[#f9f8f6]/95 flex flex-col items-center justify-center text-center p-8 z-20">
                     <i data-lucide="check-circle-2" class="w-12 h-12 text-fashion-accent mb-4"></i>
                     <h3 class="text-2xl font-serif mb-2">Заявка отправлена</h3>
                     <p class="text-fashion-muted text-sm font-light">Спасибо! Я скоро свяжусь с вами для подтверждения деталей.</p>
@@ -409,18 +409,18 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-xs tracking-widest uppercase text-fashion-muted mb-2">Ваше имя</label>
-                        <input type="text" required class="w-full bg-fashion-dark border border-white/20 px-4 py-3 text-sm focus:outline-none focus:border-fashion-accent transition">
+                        <input type="text" required class="w-full bg-[#f9f8f6] border border-[#1a1a1a]/20 px-4 py-3 text-sm focus:outline-none focus:border-fashion-accent transition">
                     </div>
                     <div>
                         <label class="block text-xs tracking-widest uppercase text-fashion-muted mb-2">Телефон или Telegram</label>
-                        <input type="text" required class="w-full bg-fashion-dark border border-white/20 px-4 py-3 text-sm focus:outline-none focus:border-fashion-accent transition">
+                        <input type="text" required class="w-full bg-[#f9f8f6] border border-[#1a1a1a]/20 px-4 py-3 text-sm focus:outline-none focus:border-fashion-accent transition">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-xs tracking-widest uppercase text-fashion-muted mb-2">Выбрать услугу / пакет</label>
-                        <select class="w-full bg-fashion-dark border border-white/20 px-4 py-3 text-sm focus:outline-none focus:border-fashion-accent transition">
+                        <select class="w-full bg-[#f9f8f6] border border-[#1a1a1a]/20 px-4 py-3 text-sm focus:outline-none focus:border-fashion-accent transition">
                             <option>Свадебный пакет</option>
                             <option>Пакет для съемок</option>
                             <option>Клиентский полный образ</option>
@@ -430,29 +430,29 @@
                     </div>
                     <div>
                         <label class="block text-xs tracking-widest uppercase text-fashion-muted mb-2">Желаемая дата</label>
-                        <input type="date" class="w-full bg-fashion-dark border border-white/20 px-4 py-3 text-sm focus:outline-none focus:border-fashion-accent transition text-fashion-muted">
+                        <input type="date" class="w-full bg-[#f9f8f6] border border-[#1a1a1a]/20 px-4 py-3 text-sm focus:outline-none focus:border-fashion-accent transition text-fashion-muted">
                     </div>
                 </div>
 
                 <div>
                     <label class="block text-xs tracking-widest uppercase text-fashion-muted mb-2">Комментарий / Детали</label>
-                    <textarea rows="4" class="w-full bg-fashion-dark border border-white/20 px-4 py-3 text-sm focus:outline-none focus:border-fashion-accent transition" placeholder="Расскажите о вашем мероприятии или идее съемки..."></textarea>
+                    <textarea rows="4" class="w-full bg-[#f9f8f6] border border-[#1a1a1a]/20 px-4 py-3 text-sm focus:outline-none focus:border-fashion-accent transition" placeholder="Расскажите о вашем мероприятии или идее съемки..."></textarea>
                 </div>
 
-                <button type="submit" class="w-full bg-fashion-light text-fashion-dark py-4 text-xs tracking-widest uppercase font-medium hover:bg-fashion-accent hover:text-white transition duration-300">
+                <button type="submit" class="w-full bg-[#1a1a1a] text-[#f9f8f6] py-4 text-xs tracking-widest uppercase font-medium hover:bg-fashion-accent hover:text-white transition duration-300">
                     Отправить заявку
                 </button>
             </form>
         </section>
 
         <!-- PAGE 7: CONTACTS -->
-        <section id="page-contacts" class="page-view px-6 max-w-4xl mx-auto text-center pt-6">
+        <section id="page-contacts" class="page-view px-6 max-w-4xl mx-auto text-center py-8 bg-[#f9f8f6] text-[#1a1a1a]">
             <div>
                 <span class="text-fashion-accent text-xs tracking-[0.2em] uppercase block mb-3">Контакты</span>
                 <h2 class="text-3xl sm:text-4xl font-serif font-light mb-10">Свяжитесь со мной</h2>
-                <div class="bg-fashion-gray/30 border border-white/10 p-10 space-y-6 max-w-lg mx-auto">
+                <div class="bg-white border border-[#1a1a1a]/10 p-10 space-y-6 max-w-lg mx-auto shadow-sm">
                     <p class="text-fashion-muted text-sm font-light">Я открыта для коммерческих съемок, работы с невестами и частными клиентами по всему миру.</p>
-                    <div class="space-y-3 text-sm tracking-widest uppercase pt-4 border-t border-white/10">
+                    <div class="space-y-3 text-sm tracking-widest uppercase pt-4 border-t border-[#1a1a1a]/10">
                         <p>Telegram: <a href="https://t.me" target="_blank" class="text-fashion-accent hover:underline">@chernoletskaya</a></p>
                         <p>Instagram: <a href="https://instagram.com" target="_blank" class="text-fashion-accent hover:underline">@chernoletskaya.style</a></p>
                         <p>Email: <a href="mailto:contact@chernoletskaya.com" class="text-fashion-accent hover:underline">contact@chernoletskaya.com</a></p>
@@ -464,7 +464,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-white/10 py-12 px-6 bg-fashion-dark mt-auto">
+    <footer class="border-t border-[#1a1a1a]/10 py-12 px-6 bg-[#f9f8f6] mt-auto text-[#1a1a1a]">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
             <div>
                 <a href="#" onclick="switchPage('home')" class="font-serif text-xl tracking-widest uppercase font-semibold block mb-1">
@@ -524,19 +524,17 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Improved Desktop Hover triggers
+        // Hover triggers for desktop
         menuContainer.addEventListener('mouseenter', () => {
             if (window.innerWidth >= 768) {
                 openDrawer();
             }
         });
 
-        // Keep drawer open when mouse moves inside the side drawer
         sideDrawer.addEventListener('mouseleave', (e) => {
             if (window.innerWidth >= 768) {
                 const rect = sideDrawer.getBoundingClientRect();
                 const menuRect = menuContainer.getBoundingClientRect();
-                // Check if mouse moved outside both drawer and menu button area
                 if ((e.clientX < rect.left || e.clientX >= rect.right || e.clientY < rect.top || e.clientY >= rect.bottom) &&
                     (e.clientX < menuRect.left || e.clientX >= menuRect.right || e.clientY < menuRect.top || e.clientY >= menuRect.bottom)) {
                     closeDrawer();
@@ -544,7 +542,7 @@
             }
         });
 
-        // Click fallback / Mobile toggle & Desktop click support
+        // Click toggles for mobile & desktop fallback
         menuBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             if (isDrawerOpen) {
