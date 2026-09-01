@@ -61,9 +61,11 @@
                 <button onclick="switchPage('booking')" class="hidden sm:inline-block border border-fashion-accent px-5 py-2.5 text-xs tracking-widest uppercase hover:bg-fashion-accent hover:text-white transition duration-300">
                     Забронировать
                 </button>
-                <button id="menu-btn" class="text-fashion-light focus:outline-none p-2 hover:text-fashion-accent transition">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
+                <div id="menu-container" class="relative group py-2">
+                    <button id="menu-btn" class="text-fashion-light focus:outline-none p-2 hover:text-fashion-accent transition flex items-center space-x-2">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
@@ -499,23 +501,57 @@
         }
 
         const menuBtn = document.getElementById('menu-btn');
+        const menuContainer = document.getElementById('menu-container');
         const closeDrawerBtn = document.getElementById('close-drawer');
         const sideDrawer = document.getElementById('side-drawer');
         const drawerOverlay = document.getElementById('drawer-overlay');
 
+        let isDrawerOpen = false;
+
         function openDrawer() {
+            isDrawerOpen = true;
             sideDrawer.classList.remove('translate-x-full');
             drawerOverlay.classList.remove('opacity-0', 'pointer-events-none');
             document.body.style.overflow = 'hidden';
         }
 
         function closeDrawer() {
+            isDrawerOpen = false;
             sideDrawer.classList.add('translate-x-full');
             drawerOverlay.classList.add('opacity-0', 'pointer-events-none');
             document.body.style.overflow = 'auto';
         }
 
-        menuBtn.addEventListener('click', openDrawer);
+        // Improved Desktop Hover triggers
+        menuContainer.addEventListener('mouseenter', () => {
+            if (window.innerWidth >= 768) {
+                openDrawer();
+            }
+        });
+
+        // Keep drawer open when mouse moves inside the side drawer
+        sideDrawer.addEventListener('mouseleave', (e) => {
+            if (window.innerWidth >= 768) {
+                const rect = sideDrawer.getBoundingClientRect();
+                const menuRect = menuContainer.getBoundingClientRect();
+                // Check if mouse moved outside both drawer and menu button area
+                if ((e.clientX < rect.left || e.clientX >= rect.right || e.clientY < rect.top || e.clientY >= rect.bottom) &&
+                    (e.clientX < menuRect.left || e.clientX >= menuRect.right || e.clientY < menuRect.top || e.clientY >= menuRect.bottom)) {
+                    closeDrawer();
+                }
+            }
+        });
+
+        // Click fallback / Mobile toggle & Desktop click support
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (isDrawerOpen) {
+                closeDrawer();
+            } else {
+                openDrawer();
+            }
+        });
+
         closeDrawerBtn.addEventListener('click', closeDrawer);
         drawerOverlay.addEventListener('click', closeDrawer);
 
