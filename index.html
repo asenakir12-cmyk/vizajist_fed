@@ -51,18 +51,18 @@
 <body class="bg-fashion-dark text-fashion-light antialiased selection:bg-fashion-accent selection:text-white min-h-screen flex flex-col justify-between">
 
     <!-- Header / Navigation -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-fashion-dark/95 backdrop-blur-md border-b border-white/15">
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#f9f8f6]/95 text-fashion-dark backdrop-blur-md border-b border-fashion-dark/10">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#" onclick="switchPage('home')" class="font-serif text-xl sm:text-2xl tracking-widest uppercase font-semibold hover:text-fashion-accent transition">
                 Anastasia Chernoletskaya
             </a>
             
             <div class="flex items-center space-x-4">
-                <button onclick="switchPage('booking')" class="hidden sm:inline-block border border-fashion-accent px-5 py-2.5 text-xs tracking-widest uppercase hover:bg-fashion-accent hover:text-white transition duration-300">
+                <button onclick="switchPage('booking')" class="hidden sm:inline-block border border-fashion-dark/30 px-5 py-2.5 text-xs tracking-widest uppercase hover:bg-fashion-dark hover:text-[#f9f8f6] transition duration-300">
                     Забронировать
                 </button>
                 <div id="menu-container" class="relative group py-2">
-                    <button id="menu-btn" class="text-fashion-light focus:outline-none p-2 hover:text-fashion-accent transition flex items-center space-x-2">
+                    <button id="menu-btn" class="text-fashion-dark focus:outline-none p-2 hover:text-fashion-accent transition flex items-center space-x-2">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
                 </div>
@@ -71,13 +71,13 @@
     </header>
 
     <!-- Side Drawer Menu -->
-    <div id="drawer-overlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    <div id="drawer-overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
     
-    <div id="side-drawer" class="fixed top-0 right-0 w-full sm:w-96 h-full bg-fashion-dark border-l border-white/10 z-50 transform translate-x-full transition-transform duration-300 flex flex-col justify-between p-8 sm:p-12 shadow-2xl">
+    <div id="side-drawer" class="fixed top-0 right-0 w-full sm:w-96 h-full bg-[#f9f8f6] text-fashion-dark border-l border-fashion-dark/10 z-50 transform translate-x-full transition-transform duration-300 flex flex-col justify-between p-8 sm:p-12 shadow-2xl">
         <div>
-            <div class="flex items-center justify-between pb-8 border-b border-white/10">
+            <div class="flex items-center justify-between pb-8 border-b border-fashion-dark/15">
                 <span class="font-serif text-lg tracking-widest uppercase">Меню</span>
-                <button id="close-drawer" class="text-fashion-muted hover:text-fashion-light p-2 focus:outline-none transition">
+                <button id="close-drawer" class="text-fashion-dark/70 hover:text-fashion-dark p-2 focus:outline-none transition">
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
             </div>
@@ -114,9 +114,9 @@
             </nav>
         </div>
 
-        <div class="pt-8 border-t border-white/10 text-xs tracking-wider space-y-3">
-            <p class="text-fashion-muted uppercase">Связь со мной:</p>
-            <div class="flex space-x-6 text-fashion-light uppercase">
+        <div class="pt-8 border-t border-fashion-dark/15 text-xs tracking-wider space-y-3">
+            <p class="text-fashion-dark/60 uppercase">Связь со мной:</p>
+            <div class="flex space-x-6 text-fashion-dark uppercase">
                 <a href="https://instagram.com" target="_blank" class="hover:text-fashion-accent transition">Instagram</a>
                 <a href="https://t.me" target="_blank" class="hover:text-fashion-accent transition">Telegram</a>
             </div>
@@ -130,9 +130,9 @@
         <section id="page-home" class="page-view active relative min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden px-6 pt-16 pb-16 bg-[#0d0d0d] text-[#f9f8f6]">
             <div class="absolute inset-0 z-0 flex items-center justify-center overflow-hidden bg-[#0d0d0d]">
                 <img src="hero-bg.jpg" alt="[Главный фон: hero-bg.jpg]" class="w-full h-full object-cover object-center scale-100 transform sm:scale-105" onerror="this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=1920'">
-                <!-- Light powdery white veil overlay instead of monochrome & dark gradient -->
-                <div class="absolute inset-0 bg-white/10 backdrop-brightness-105 backdrop-blur-[0.5px]"></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-[#0d0d0d]/40 via-transparent to-[#0d0d0d]/10"></div>
+                <!-- Very subtle, faint white veil overlay so color photo shows clearly with just a light airy dust -->
+                <div class="absolute inset-0 bg-white/[0.04] backdrop-blur-[0.2px]"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0d0d0d]/30 via-transparent to-[#0d0d0d]/10"></div>
             </div>
 
             <div class="relative z-10 text-center max-w-4xl mx-auto my-auto">
