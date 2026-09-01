@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOPHIA VANCE | Makeup & Hair Stylist</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fashion: {
+                            dark: '#0d0d0d',
+                            light: '#f9f8f6',
+                            accent: '#c5a880',
+                            gray: '#1a1a1a',
+                            muted: '#8c8c8c'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0d0d0d;
+            color: #f9f8f6;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-fashion-dark text-fashion-light antialiased selection:bg-fashion-accent selection:text-white">
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-fashion-dark/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="font-serif text-2xl tracking-widest uppercase font-semibold">
+                Sophia Vance
+            </a>
+            
+            <div class="flex items-center space-x-4">
+                <a href="#booking" class="hidden sm:inline-block border border-fashion-accent px-5 py-2.5 text-xs tracking-widest uppercase hover:bg-fashion-accent hover:text-white transition duration-300">
+                    Забронировать
+                </a>
+                <button id="menu-btn" class="text-fashion-light focus:outline-none p-2 hover:text-fashion-accent transition">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Side Drawer Menu (Overlay & Panel) -->
+    <div id="drawer-overlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    
+    <div id="side-drawer" class="fixed top-0 right-0 w-full sm:w-96 h-full bg-fashion-dark border-l border-white/10 z-50 transform translate-x-full transition-transform duration-300 flex flex-col justify-between p-8 sm:p-12 shadow-2xl">
+        <!-- Top Drawer Header -->
+        <div>
+            <div class="flex items-center justify-between pb-8 border-b border-white/10">
+                <span class="font-serif text-lg tracking-widest uppercase">Меню</span>
+                <button id="close-drawer" class="text-fashion-muted hover:text-fashion-light p-2 focus:outline-none transition">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <!-- Drawer Links -->
+            <nav class="flex flex-col space-y-6 pt-10 text-sm tracking-widest uppercase">
+                <a href="#about" class="drawer-link hover:text-fashion-accent transition flex items-center justify-between group">
+                    <span>Обо мне</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition transform -translate-x-2 group-hover:translate-x-0 text-fashion-accent"></i>
+                </a>
+                <a href="#services" class="drawer-link hover:text-fashion-accent transition flex items-center justify-between group">
+                    <span>Услуги</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition transform -translate-x-2 group-hover:translate-x-0 text-fashion-accent"></i>
+                </a>
+                <a href="#portfolio" class="drawer-link hover:text-fashion-accent transition flex items-center justify-between group">
+                    <span>Портфолио</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition transform -translate-x-2 group-hover:translate-x-0 text-fashion-accent"></i>
+                </a>
+                <a href="#booking" class="drawer-link hover:text-fashion-accent transition flex items-center justify-between group">
+                    <span>Запись</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition transform -translate-x-2 group-hover:translate-x-0 text-fashion-accent"></i>
+                </a>
+                <a href="#contacts" class="drawer-link hover:text-fashion-accent transition flex items-center justify-between group">
+                    <span>Контакты</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition transform -translate-x-2 group-hover:translate-x-0 text-fashion-accent"></i>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Drawer Footer Contacts -->
+        <div class="pt-8 border-t border-white/10 text-xs tracking-wider space-y-3">
+            <p class="text-fashion-muted uppercase">Связь со мной:</p>
+            <div class="flex space-x-6 text-fashion-light uppercase">
+                <a href="https://instagram.com" target="_blank" class="hover:text-fashion-accent transition">Instagram</a>
+                <a href="https://t.me" target="_blank" class="hover:text-fashion-accent transition">Telegram</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=1920" alt="Fashion Makeup & Hair" class="w-full h-full object-cover opacity-40 scale-105 animate-pulse duration-1000">
+            <div class="absolute inset-0 bg-gradient-to-t from-fashion-dark via-fashion-dark/40 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-6 mt-16">
+            <span class="text-fashion-accent text-xs tracking-[0.3em] uppercase block mb-4">Makeup & Hair Couture</span>
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-serif font-light tracking-wide mb-6 leading-tight">
+                Эстетика стиля <br><span class="italic font-normal">в каждой детали</span>
+            </h1>
+            <p class="text-fashion-muted text-sm sm:text-base max-w-lg mx-auto mb-10 tracking-wider font-light">
+                Коммерческие съемки, глянцевые журналы, рекламные кампании и незабываемые свадебные образы.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="#portfolio" class="w-full sm:w-auto bg-fashion-light text-fashion-dark px-8 py-4 text-xs tracking-widest uppercase font-medium hover:bg-fashion-accent hover:text-white transition duration-300">
+                    Смотреть работы
+                </a>
+                <a href="#booking" class="w-full sm:w-auto border border-white/30 px-8 py-4 text-xs tracking-widest uppercase font-medium hover:border-fashion-accent hover:text-fashion-accent transition duration-300">
+                    Связаться
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 hidden md:flex flex-col items-center animate-bounce">
+            <span class="text-[10px] tracking-widest text-fashion-muted uppercase mb-2">Вниз</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-fashion-accent"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 px-6 bg-fashion-gray/30 border-y border-white/5">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <div class="aspect-[3/4] overflow-hidden rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=1000" alt="София Ванс" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+                </div>
+                <div class="absolute -bottom-6 -right-6 w-48 h-48 border border-fashion-accent hidden sm:block -z-10"></div>
+            </div>
+            
+            <div class="space-y-8">
+                <div>
+                    <span class="text-fashion-accent text-xs tracking-[0.2em] uppercase block mb-3">Обо мне</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-light leading-snug">
+                        Создаю гармонию света, текстуры и индивидуальности
+                    </h2>
+                </div>
+                <p class="text-fashion-muted text-sm leading-relaxed font-light">
+                    Меня зовут София, я профессиональный визажист и стилист по волосам с опытом работы более 7 лет. Сотрудничаю с топовыми фотографами, модельными агентствами, журналами и брендами одежды. 
+                </p>
+                <p class="text-fashion-muted text-sm leading-relaxed font-light">
+                    Мой почерк — это чистая кожа, благородные текстуры, подчеркивающие природную красоту, и современные трендовые укладки: от ультрагладких текстур до расслабленной голливудской волны и fashion-мокрых эффектов.
+                </p>
+
+                <div class="grid grid-cols-3 gap-6 pt-6 border-t border-white/10">
+                    <div>
+                        <span class="block text-2xl sm:text-3xl font-serif text-fashion-accent font-semibold">7+</span>
+                        <span class="text-[11px] tracking-widest uppercase text-fashion-muted">Лет опыта</span>
+                    </div>
+                    <div>
+                        <span class="block text-2xl sm:text-3xl font-serif text-fashion-accent font-semibold">300+</span>
+                        <span class="text-[11px] tracking-widest uppercase text-fashion-muted">Невест</span>
+                    </div>
+                    <div>
+                        <span class="block text-2xl sm:text-3xl font-serif text-fashion-accent font-semibold">50+</span>
+                        <span class="text-[11px] tracking-widest uppercase text-fashion-muted">Публикаций</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Directions -->
+    <section id="services" class="py-28 px-6 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-20">
+            <span class="text-fashion-accent text-xs tracking-[0.2em] uppercase block mb-3">Направления</span>
+            <h2 class="text-3xl sm:text-4xl font-serif font-light">Наши Услуги & Форматы</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <!-- Service 1: Fashion & Commercial -->
+            <div class="group relative bg-fashion-gray/50 border border-white/10 p-8 sm:p-12 overflow-hidden hover:border-fashion-accent transition duration-500">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-fashion-accent/5 rounded-full blur-2xl group-hover:bg-fashion-accent/15 transition"></div>
+                <span class="text-fashion-accent text-xs tracking-widest uppercase block mb-3">Backstage & Studio</span>
+                <h3 class="text-2xl font-serif mb-4">Съемки & Коммерция</h3>
+                <p class="text-fashion-muted text-sm mb-8 leading-relaxed font-light">
+                    Работа на съемочных площадках для брендов одежды, лукбуков, каталогов, журналов и рекламных кампаний. Полное сопровождение смены, оперативная смена образов.
+                </p>
+                <ul class="space-y-3 text-xs tracking-wider uppercase text-fashion-light/80 mb-8 border-t border-white/10 pt-6">
+                    <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-fashion-accent mr-2"></i> Сопровождение съемочного дня</li>
+                    <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-fashion-accent mr-2"></i> Творческие коллаборации</li>
+                    <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-fashion-accent mr-2"></i> Создание креативных образов</li>
+                </ul>
+                <a href="#booking" class="inline-flex items-center text-xs tracking-widest uppercase text-fashion-accent hover:underline">
+                    Заказать смену <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
+            </div>
+
+            <!-- Service 2: Bridal & Private -->
+            <div class="group relative bg-fashion-gray/50 border border-white/10 p-8 sm:p-12 overflow-hidden hover:border-fashion-accent transition duration-500">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-fashion-accent/5 rounded-full blur-2xl group-hover:bg-fashion-accent/15 transition"></div>
+                <span class="text-fashion-accent text-xs tracking-widest uppercase block mb-3">Bridal Couture</span>
+                <h3 class="text-2xl font-serif mb-4">Невесты & Частные клиенты</h3>
+                <p class="text-fashion-muted text-sm mb-8 leading-relaxed font-light">
+                    Изысканный свадебный образ, подчеркивающий вашу естественную красоту и элегантность. Стойкий макияж и безупречная прическа, которые продержатся весь день.
+                </p>
+                <ul class="space-y-3 text-xs tracking-wider uppercase text-fashion-light/80 mb-8 border-t border-white/10 pt-6">
+                    <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-fashion-accent mr-2"></i> Репетиция свадебного образа</li>
+                    <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-fashion-accent mr-2"></i> Сборы невесты в день свадьбы</li>
+                    <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-fashion-accent mr-2"></i> Образы для гостей и мамы</li>
+                </ul>
+                <a href="#booking" class="inline-flex items-center text-xs tracking-widest uppercase text-fashion-accent hover:underline">
+                    Забронировать дату <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery -->
+    <section id="portfolio" class="py-24 px-6 bg-fashion-gray/30 border-y border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                <div>
+                    <span class="text-fashion-accent text-xs tracking-[0.2em] uppercase block mb-3">Галерея</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-light">Избранные работы</h2>
+                </div>
+                <!-- Filter buttons -->
+                <div class="flex space-x-6 mt-6 md:mt-0 text-xs tracking-widest uppercase">
+                    <button class="filter-btn text-fashion-accent border-b border-fashion-accent pb-1" data-filter="all">Все</button>
+                    <button class="filter-btn text-fashion-muted hover:text-fashion-light transition pb-1" data-filter="fashion">Съемки</button>
+                    <button class="filter-btn text-fashion-muted hover:text-fashion-light transition pb-1" data-filter="bridal">Невесты</button>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
+                <!-- Item 1 -->
+                <div class="portfolio-item group relative overflow-hidden aspect-[4/5] bg-fashion-gray" data-category="fashion">
+                    <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80&w=800" alt="Fashion Look" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-fashion-dark/80 via-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-8">
+                        <span class="text-fashion-accent text-[10px] tracking-widest uppercase">Fashion Editorial</span>
+                        <h4 class="text-lg font-serif mt-1">Vogue Cover Look</h4>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="portfolio-item group relative overflow-hidden aspect-[4/5] bg-fashion-gray" data-category="bridal">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800" alt="Bridal Look" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-fashion-dark/80 via-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-8">
+                        <span class="text-fashion-accent text-[10px] tracking-widest uppercase">Bridal Couture</span>
+                        <h4 class="text-lg font-serif mt-1">Classic Elegance</h4>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="portfolio-item group relative overflow-hidden aspect-[4/5] bg-fashion-gray" data-category="fashion">
+                    <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=800" alt="Commercial Makeup" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-fashion-dark/80 via-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-8">
+                        <span class="text-fashion-accent text-[10px] tracking-widest uppercase">Commercial</span>
+                        <h4 class="text-lg font-serif mt-1">Minimal Glow</h4>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="portfolio-item group relative overflow-hidden aspect-[4/5] bg-fashion-gray" data-category="bridal">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=800" alt="Bridal Hair" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-fashion-dark/80 via-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-8">
+                        <span class="text-fashion-accent text-[10px] tracking-widest uppercase">Bridal Hair</span>
+                        <h4 class="text-lg font-serif mt-1">Romantic Waves</h4>
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div class="portfolio-item group relative overflow-hidden aspect-[4/5] bg-fashion-gray" data-category="fashion">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800" alt="Editorial Style" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-fashion-dark/80 via-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-8">
+                        <span class="text-fashion-accent text-[10px] tracking-widest uppercase">Editorial</span>
+                        <h4 class="text-lg font-serif mt-1">Graphic Eye & Wet Hair</h4>
+                    </div>
+                </div>
+                <!-- Item 6 -->
+                <div class="portfolio-item group relative overflow-hidden aspect-[4/5] bg-fashion-gray" data-category="bridal">
+                    <img src="https://images.unsplash.com/photo-1583864697784-a0efc8379f70?auto=format&fit=crop&q=80&w=800" alt="Wedding Style" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-fashion-dark/80 via-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-8">
+                        <span class="text-fashion-accent text-[10px] tracking-widest uppercase">Bridal Look</span>
+                        <h4 class="text-lg font-serif mt-1">Modern Chic</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking / Contact Form Section -->
+    <section id="booking" class="py-28 px-6 max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="text-fashion-accent text-xs tracking-[0.2em] uppercase block mb-3">Запись & Сотрудничество</span>
+            <h2 class="text-3xl sm:text-4xl font-serif font-light mb-4">Обсудим ваш проект или образ</h2>
+            <p class="text-fashion-muted text-sm font-light">Заполните форму, и я свяжусь с вами в течение часа для уточнения деталей.</p>
+        </div>
+
+        <form id="contact-form" class="space-y-6 bg-fashion-gray/20 p-8 sm:p-12 border border-white/10 relative">
+            <div id="form-success" class="hidden absolute inset-0 bg-fashion-dark/95 flex flex-col items-center justify-center text-center p-8 z-20">
+                <i data-lucide="check-circle-2" class="w-12 h-12 text-fashion-accent mb-4"></i>
+                <h3 class="text-2xl font-serif mb-2">Заявка отправлена</h3>
+                <p class="text-fashion-muted text-sm font-light">Спасибо! Я скоро свяжусь с вами для подтверждения деталей.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-xs tracking-widest uppercase text-fashion-muted mb-2">Ваше имя</label>
+                    <input type="text" required class="w-full bg-fashion-dark border border-white/20 px-4 py-3 text-sm focus:outline-none focus:border-fashion-accent transition">
+                </div>
+                <div>
+                    <label class="block text-xs tracking-widest uppercase text-fashion-muted mb-2">Телефон или Telegram</label>
+                    <input type="text" required class="w-full bg-fashion-dark border border-white/20 px-4 py-3 text-sm focus:outline-none focus:border-fashion-accent transition">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-xs tracking-widest uppercase text-fashion-muted mb-2">Тип услуги</label>
+                    <select class="w-full bg-fashion-dark border border-white/20 px-4 py-3 text-sm focus:outline-none focus:border-fashion-accent transition">
+                        <option>Свадебный образ (Невеста)</option>
+                        <option>Коммерческая съемка / Бренд</option>
+                        <option>Индивидуальный образ</option>
+                        <option>Обучение / Мастер-класс</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs tracking-widest uppercase text-fashion-muted mb-2">Желаемая дата</label>
+                    <input type="date" class="w-full bg-fashion-dark border border-white/20 px-4 py-3 text-sm focus:outline-none focus:border-fashion-accent transition text-fashion-muted">
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-xs tracking-widest uppercase text-fashion-muted mb-2">Комментарий / Детали</label>
+                <textarea rows="4" class="w-full bg-fashion-dark border border-white/20 px-4 py-3 text-sm focus:outline-none focus:border-fashion-accent transition" placeholder="Расскажите о вашем мероприятии или идее съемки..."></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-fashion-light text-fashion-dark py-4 text-xs tracking-widest uppercase font-medium hover:bg-fashion-accent hover:text-white transition duration-300">
+                Отправить заявку
+            </button>
+        </form>
+    </section>
+
+    <!-- Footer / Contacts -->
+    <footer id="contacts" class="border-t border-white/10 py-16 px-6 bg-fashion-dark">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center md:text-left">
+            <div>
+                <a href="#" class="font-serif text-2xl tracking-widest uppercase font-semibold block mb-2">
+                    Sophia Vance
+                </a>
+                <p class="text-xs text-fashion-muted tracking-widest uppercase">Makeup & Hair Couture / Worldwide</p>
+            </div>
+
+            <div class="flex justify-center space-x-8 text-xs tracking-widest uppercase">
+                <a href="https://instagram.com" target="_blank" class="hover:text-fashion-accent transition">Instagram</a>
+                <a href="https://t.me" target="_blank" class="hover:text-fashion-accent transition">Telegram</a>
+                <a href="mailto:contact@sophiavance.com" class="hover:text-fashion-accent transition">Email</a>
+            </div>
+
+            <div class="text-xs text-fashion-muted tracking-wider text-center md:text-right">
+                &copy; 2026 Sophia Vance. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Side Drawer Menu Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const closeDrawerBtn = document.getElementById('close-drawer');
+        const sideDrawer = document.getElementById('side-drawer');
+        const drawerOverlay = document.getElementById('drawer-overlay');
+        const drawerLinks = document.querySelectorAll('.drawer-link');
+
+        function openDrawer() {
+            sideDrawer.classList.remove('translate-x-full');
+            drawerOverlay.classList.remove('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrawer() {
+            sideDrawer.classList.add('translate-x-full');
+            drawerOverlay.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = 'auto';
+        }
+
+        menuBtn.addEventListener('click', openDrawer);
+        closeDrawerBtn.addEventListener('click', closeDrawer);
+        drawerOverlay.addEventListener('click', closeDrawer);
+
+        drawerLinks.forEach(link => {
+            link.addEventListener('click', closeDrawer);
+        });
+
+        // Portfolio Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('text-fashion-accent', 'border-b', 'border-fashion-accent');
+                    b.classList.add('text-fashion-muted');
+                });
+                btn.classList.add('text-fashion-accent', 'border-b', 'border-fashion-accent');
+                btn.classList.remove('text-fashion-muted');
+
+                const filter = btn.getAttribute('data-filter');
+
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Form submission simulation
+        const form = document.getElementById('contact-form');
+        const successMsg = document.getElementById('form-success');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            successMsg.classList.remove('hidden');
+            setTimeout(() => {
+                successMsg.classList.add('hidden');
+                form.reset();
+            }, 4000);
+        });
+    </script>
+</body>
+</html>
