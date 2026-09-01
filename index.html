@@ -129,8 +129,10 @@
         <!-- PAGE 1: HOME -->
         <section id="page-home" class="page-view active relative min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden px-6 pt-16 pb-16 bg-[#0d0d0d] text-[#f9f8f6]">
             <div class="absolute inset-0 z-0 flex items-center justify-center overflow-hidden bg-[#0d0d0d]">
-                <img src="hero-bg.jpg" alt="[Главный фон: hero-bg.jpg]" class="w-full h-full object-cover object-center opacity-60 scale-100 transform sm:scale-105" onerror="this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=1920'">
-                <div class="absolute inset-0 bg-gradient-to-t from-[#0d0d0d]/80 via-[#0d0d0d]/40 to-[#0d0d0d]/20 backdrop-blur-[1px]"></div>
+                <img src="hero-bg.jpg" alt="[Главный фон: hero-bg.jpg]" class="w-full h-full object-cover object-center scale-100 transform sm:scale-105" onerror="this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=1920'">
+                <!-- Light powdery white veil overlay instead of monochrome & dark gradient -->
+                <div class="absolute inset-0 bg-white/10 backdrop-brightness-105 backdrop-blur-[0.5px]"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0d0d0d]/40 via-transparent to-[#0d0d0d]/10"></div>
             </div>
 
             <div class="relative z-10 text-center max-w-4xl mx-auto my-auto">
